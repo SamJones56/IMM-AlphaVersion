@@ -11,8 +11,10 @@ ScriptsOnlyBuild:
     - FollowPlayer
     - GameManager
     - Grenade
+    - Link
     - PlayerBullet
     - PlayerController
+    - PressHandler
     - RocketLauncher
     - SceneController
     - ShooterEnemyScript
@@ -47,6 +49,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   serializedClasses:
+    Assembly-CSharp:
+    - PressHandler/ButtonPressEvent
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
@@ -79,6 +83,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Link
+    methodName: OpenRepo
   - assembly: Assembly-CSharp
     fullTypeName: SceneController
     methodName: LoadScene
@@ -322,6 +329,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5768}
     - Class: 114
       Script: {instanceID: 6082}
+    - Class: 114
+      Script: {instanceID: 23828}
+    - Class: 114
+      Script: {instanceID: 23832}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1631,6 +1642,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OpenLink
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Link
+  - hash:
+      serializedVersion: 2
+      Hash: 549c127769a6a8a6a1905379a6342551
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PressHandler
   platform: 20
   scenePathNames:
   - Assets/Scenes/Menu.unity
@@ -1638,4 +1667,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Shop.unity
   - Assets/Scenes/Wave2.unity
   - Assets/Scenes/Dead.unity
-  playerPath: D:/IMM-Alpha/IMM-AlphaVersion/AlphaVersion/WebBuild
+  playerPath: D:/IMM-Alpha/IMM-AlphaVersion/WebBuild
