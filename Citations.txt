@@ -1,0 +1,3 @@
+Citation for player looking at mouse movement:
+Karolio (2019) How to make an object follow the mouse in Unity. 
+Available at: https://www.youtube.com/watch?v=mF_BB_YsyDk&ab_channel=Karolio (Accessed 26 09 2023)

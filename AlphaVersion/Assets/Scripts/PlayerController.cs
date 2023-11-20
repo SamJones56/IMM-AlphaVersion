@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         // Set dataManager
         dataManager = FindObjectOfType<DataManager>();
-        
+
         // Set game manager
         gameManager = FindObjectOfType<GameManager>();
         // Set up for looking at mouse
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         // Set the firepoint
         firePoint = playerGun.transform;
-        
+
         // Set Scene manager
         sceneManager = FindObjectOfType<SceneController>();
 
@@ -70,10 +70,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Create input vector 3
-        Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
+        Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         // Move player character
         transform.position += input.normalized * speed * Time.deltaTime;
-       
+
         // Fire weapon
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -83,6 +83,11 @@ public class PlayerController : MonoBehaviour
         }
 
         // Look at mouse
+        /*
+         * Citation for player looking at mouse movement:
+         * Karolio (2019) How to make an object follow the mouse in Unity. 
+         * Available at: https://www.youtube.com/watch?v=mF_BB_YsyDk&ab_channel=Karolio (Accessed 26 10 2023)
+         */
         ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
@@ -100,10 +105,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         // Player hit
-        if (isHit) 
+        if (isHit)
         {
             PlayerHit();
-        }    
+        }
     }
 
     void Fire()
@@ -112,7 +117,7 @@ public class PlayerController : MonoBehaviour
         Instantiate(playerBullet, firePoint.position, Quaternion.LookRotation(fireDirection));
     }
 
-    public void PlayerHit() 
+    public void PlayerHit()
     {
         playerMat.SetColor("_Color", Color.red);
 
@@ -122,7 +127,7 @@ public class PlayerController : MonoBehaviour
             // Set the player to green again
             playerMat.SetColor("_Color", Color.green);
             // Reset the player being hit
-            timeLeft = 0;   
+            timeLeft = 0;
             isHit = false;
         }
     }
